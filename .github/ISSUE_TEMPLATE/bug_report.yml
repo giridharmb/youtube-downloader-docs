@@ -1,0 +1,82 @@
+name: Bug report
+description: Something in the app does not work as described.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting. Please update yt-dlp first (`brew upgrade yt-dlp`) and check
+        [Troubleshooting](https://github.com/giridharmb/youtube-downloader-docs/blob/main/docs/troubleshooting.md).
+        Remove anything private from what you paste: links to private videos, your user name in
+        file paths, proxy addresses.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+      placeholder: "1. Pasted a playlist link\n2. Clicked Add to Queue\n3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output of the row that failed
+      description: Click the page icon on the row, then Copy, and paste here. The first line is the command that was run.
+      render: text
+    validations:
+      required: false
+  - type: input
+    id: app-version
+    attributes:
+      label: YTDL version
+      description: YTDL menu > About YTDL.
+      placeholder: "1.4"
+    validations:
+      required: true
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      placeholder: "15.1"
+    validations:
+      required: true
+  - type: input
+    id: ytdlp-version
+    attributes:
+      label: yt-dlp version
+      description: Shown in Settings > Advanced, or run `yt-dlp --version` in Terminal.
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: Does it happen every time?
+      options:
+        - Every time
+        - Sometimes
+        - Only once so far
+    validations:
+      required: true
+  - type: dropdown
+    id: terminal
+    attributes:
+      label: Does the same command fail in Terminal?
+      description: Paste the first line of the row's output into Terminal. If it fails there too, the problem is in yt-dlp or the website, not in the app.
+      options:
+        - It fails in Terminal too
+        - It works in Terminal
+        - I have not tried
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I updated yt-dlp and the problem is still there.
+          required: true
+        - label: I searched the existing issues.
+          required: true
+        - label: This is not a request to get around a paywall, DRM, or a region or age restriction.
+          required: true

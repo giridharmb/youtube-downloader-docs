@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Troubleshooting
+    url: https://github.com/giridharmb/youtube-downloader-docs/blob/main/docs/troubleshooting.md
+    about: Most problems are a missing or outdated tool. Please check here first.
+  - name: Frequently asked questions
+    url: https://github.com/giridharmb/youtube-downloader-docs/blob/main/docs/faq.md
+    about: Short answers to common questions.
+  - name: Report a security problem
+    url: https://github.com/giridharmb/youtube-downloader-docs/security/advisories/new
+    about: Please report security problems privately, not in a public issue.

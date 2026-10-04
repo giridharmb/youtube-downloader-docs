@@ -1,0 +1,25 @@
+name: Documentation problem
+description: Something in these pages is wrong, unclear or missing.
+title: "[Docs] "
+labels: ["documentation"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      placeholder: docs/user-guide.md, section "Playlists"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: What should it say?
+      description: If you know. A pull request is welcome too.
+    validations:
+      required: false
