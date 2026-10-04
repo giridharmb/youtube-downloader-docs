@@ -5,6 +5,16 @@ What changed in each version of YTDL. Newest first.
 The format follows the template in
 [docs/templates/release-notes.md](docs/templates/release-notes.md).
 
+## 1.5 (2026-10-04)
+
+### Added
+
+- **The app installs the tools it needs.** When yt-dlp, ffmpeg or Deno is
+  missing, a sheet lists what was found and installs the missing ones with
+  Homebrew at one click. If Homebrew is missing too, it is installed first, in
+  Terminal. Nothing is installed without your click, and tools already on the
+  Mac are left alone.
+
 ## 1.4 (2026-10-04)
 
 ### Added

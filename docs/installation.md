@@ -2,47 +2,10 @@
 
 YTDL needs macOS 13 (Ventura) or later.
 
-Installing has two parts: the command-line tools YTDL relies on, and the app
-itself.
+Installing has two parts: the app itself, and the command-line tools it
+relies on. The app can install the tools for you.
 
-## 1. Install the tools
-
-The easiest way is [Homebrew](https://brew.sh). If you do not have it, follow
-the one-line instruction on its home page first. Then, in Terminal:
-
-```sh
-brew install yt-dlp ffmpeg deno
-```
-
-| Tool | Why |
-|---|---|
-| `yt-dlp` | Does the downloading. Required. |
-| `ffmpeg` | Joins video and audio, converts audio, embeds subtitles. Required for almost every download. |
-| `deno` | yt-dlp needs a JavaScript runtime for YouTube. Without one, YouTube downloads may fail or offer fewer formats. |
-
-Optional, for downloading one video over several connections:
-
-```sh
-brew install aria2
-```
-
-Check that they are installed:
-
-```sh
-yt-dlp --version
-ffmpeg -version | head -1
-```
-
-### Keep yt-dlp up to date
-
-Websites change, and yt-dlp is updated often to keep up. When downloads that
-used to work start failing, update first:
-
-```sh
-brew upgrade yt-dlp
-```
-
-## 2. Install the app
+## 1. Install the app
 
 <!-- TODO(maintainer): say where the disk image can be downloaded. -->
 
@@ -50,7 +13,7 @@ brew upgrade yt-dlp
 2. Drag **YTDL** onto the **Applications** shortcut in the window that opens.
 3. Eject the disk image.
 
-## 3. Open it the first time
+## 2. Open it the first time
 
 Open YTDL from Applications or Launchpad.
 
@@ -71,16 +34,67 @@ You only have to do this once.
      paragraph and list above with: "The app is signed and notarized, so it
      opens without a warning." -->
 
-## 4. Check that the tools were found
+## 3. Let the app install the tools
 
-When YTDL opens, it looks for `yt-dlp` and `ffmpeg` in the usual places
-(`/opt/homebrew/bin`, `/usr/local/bin`, `~/.local/bin`, `~/bin`, and the
-`PATH` of your login shell).
+YTDL needs these command-line tools:
 
-- No yellow bar at the top of the window: everything was found.
-- A yellow bar saying a tool was not found: open Settings (⌘,) > Advanced.
-  The **Tools** section shows what was found. Use **Choose…** to point the app
-  at the tool, or install it and click **Detect Again**.
+| Tool | Why | Needed? |
+|---|---|---|
+| yt-dlp | Does the downloading. | Required |
+| ffmpeg | Joins video and audio, converts audio, embeds subtitles. | Required |
+| Deno | yt-dlp needs a JavaScript runtime for YouTube. Without one, YouTube downloads may fail or offer fewer formats. | Needed for YouTube |
+| aria2 | Downloads one video over several connections. | Optional |
+
+When YTDL opens and one of the first three is missing, a sheet titled
+**Tools YTDL needs** appears. It shows what was found and what is missing.
+
+- Click **Install Missing Tools**. The app installs only what is missing,
+  using [Homebrew](https://brew.sh), and shows the progress. Tools that are
+  already on your Mac are left as they are. This can take several minutes.
+- Untick **Also install aria2** if you do not want the optional tool.
+- **Not Now** closes the sheet without installing anything. Nothing is ever
+  installed without your click.
+
+### If Homebrew is not installed
+
+Homebrew is the program that fetches and installs the tools. If your Mac
+does not have it, the button reads **Install in Terminal…**. It opens a
+Terminal window that first installs Homebrew, using Homebrew's own installer,
+and then the tools.
+
+- Homebrew's installer asks for your Mac password, and may install Apple's
+  Command Line Tools, which takes a while. Follow what it says.
+- When Terminal says "All done", go back to YTDL. It looks for the tools
+  again by itself.
+
+### Opening the sheet later
+
+Click **Install…** in the yellow bar that appears when a tool is missing, or
+go to Settings (⌘,) > Advanced > **Check and Install Tools…**. The check when
+the app opens can be turned off in the same place.
+
+### Installing the tools yourself
+
+If you prefer, install them in Terminal and skip the sheet:
+
+```sh
+brew install yt-dlp ffmpeg deno
+brew install aria2        # optional
+```
+
+YTDL looks for the tools in the usual places (`/opt/homebrew/bin`,
+`/usr/local/bin`, `~/.local/bin`, `~/bin`, and the `PATH` of your login
+shell), so tools installed another way are found too. For a tool somewhere
+unusual, use **Choose…** under Settings > Advanced.
+
+### Keep yt-dlp up to date
+
+Websites change, and yt-dlp is updated often to keep up. When downloads that
+used to work start failing, update first:
+
+```sh
+brew upgrade yt-dlp
+```
 
 ## Permissions macOS may ask for
 

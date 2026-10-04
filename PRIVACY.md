@@ -1,6 +1,6 @@
 # Privacy
 
-Last updated: 2026-10-04 (applies to YTDL 1.4)
+Last updated: 2026-10-04 (applies to YTDL 1.5)
 
 YTDL has no accounts, no analytics, no advertising, and no servers of its
 own. It does not send information about you or your downloads to the author
@@ -18,6 +18,7 @@ Everything below stays on your Mac, in your user account.
 | Settings | macOS preferences for `local.ytdl.app` | Your choices in the Settings window and main window, including the download folder and, if you set them, a proxy address and extra yt-dlp arguments |
 | Download history | `~/Library/Application Support/YTDL/history.json` | Title, link, file path, date, size, format and length of each finished download (up to 2000 entries) |
 | Unfinished queue | `~/Library/Application Support/YTDL/queue.json` | The links, titles and settings of downloads that had not finished when the app was closed, and the paths of their partial files |
+| Install script | `~/Library/Application Support/YTDL/Install YTDL Tools.command` | Only written if you choose **Install in Terminal…**. A short script that installs Homebrew and the missing tools |
 | Skip list | `~/Library/Application Support/YTDL/downloaded.txt` | IDs of videos already downloaded. Only written when "Skip videos that were downloaded before" is on. This file is written by yt-dlp |
 | Your downloads | The folder you chose | The media files, and partial files while a download is in progress |
 
@@ -40,6 +41,14 @@ to the internet to do its work:
   asks the SponsorBlock service about each video in order to find the
   segments. The setting is off by default.
 - **A proxy, if you set one.** Traffic then goes through the proxy you named.
+
+When you click **Install Missing Tools**, the app runs Homebrew, which
+downloads the tools from Homebrew's servers and from the tools' own
+download locations. If Homebrew is not installed, the Terminal script first
+downloads Homebrew's installer from GitHub. Homebrew is a separate program
+with its own behaviour; among other things it collects anonymous usage
+statistics unless you turn that off with `brew analytics off`. None of this
+happens unless you click the button.
 
 yt-dlp, ffmpeg, aria2 and Deno are separate programs with their own
 behaviour. See their documentation for details; [THIRD_PARTY.md](THIRD_PARTY.md)

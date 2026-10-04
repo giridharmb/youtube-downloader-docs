@@ -17,10 +17,22 @@ Two things solve most problems:
 
 A yellow bar at the top says yt-dlp or ffmpeg was not found.
 
-- Install it: `brew install yt-dlp ffmpeg`.
-- Then Settings (⌘,) > Advanced > **Detect Again**.
-- If it is installed somewhere unusual, use **Choose…** in the same place to
-  point the app at it.
+- Click **Install…** in the bar, then **Install Missing Tools**.
+- Or install it yourself, `brew install yt-dlp ffmpeg`, then Settings (⌘,) >
+  Advanced > **Detect Again**.
+- If it is installed somewhere unusual, use **Choose…** under Settings >
+  Advanced to point the app at it.
+
+## Installing the tools from the app fails
+
+- Read the output in the sheet; Homebrew says what went wrong. A common cause
+  is no internet connection.
+- If Homebrew asks you to run a command first (for example to fix
+  permissions, or to install Apple's Command Line Tools), run it in Terminal
+  and try again.
+- If the Terminal window was closed before it finished, click **Install in
+  Terminal…** again; it continues with what is still missing.
+- You can always install by hand: `brew install yt-dlp ffmpeg deno`.
 
 ## Nothing happens after adding a link
 
@@ -30,8 +42,8 @@ for a long playlist. If it ends in an error, the detail line shows it.
 ## A YouTube download fails or only low quality is offered
 
 - Update yt-dlp (see the top of this page).
-- Install a JavaScript runtime, which yt-dlp needs for YouTube:
-  `brew install deno`, then restart YTDL.
+- Install Deno, the JavaScript runtime yt-dlp needs for YouTube: Settings >
+  Advanced > **Check and Install Tools…**, or `brew install deno`.
 - If the error mentions signing in or confirming you are not a bot, see
   "A video needs you to be signed in" below. Too many requests in a short
   time can also cause this; lower **Parallel** and **Connections per video**
@@ -102,7 +114,7 @@ differs, and the video is downloaded again under the new name.
 
 ## The app will not open
 
-See "Open it the first time" in the [installation guide](installation.md#3-open-it-the-first-time).
+See "Open it the first time" in the [installation guide](installation.md#2-open-it-the-first-time).
 
 ## Start from scratch
 

@@ -1,6 +1,6 @@
 # Settings
 
-Open Settings with ⌘, or from the YTDL menu. This page describes YTDL 1.4.
+Open Settings with ⌘, or from the YTDL menu. This page describes YTDL 1.5.
 
 Most settings are captured when a link is added to the queue. Changing them
 affects links you add afterwards; rows already in the list keep theirs. The
@@ -84,6 +84,8 @@ that open too many.
 | yt-dlp | Automatic | Where the yt-dlp program is. Leave empty to have it found automatically. |
 | ffmpeg | Automatic | The same for ffmpeg. |
 | Detect Again | | Looks for the tools again, for example after installing one. |
+| Offer to install missing tools when the app opens | On | Shows the **Tools YTDL needs** sheet at launch when yt-dlp, ffmpeg or Deno is missing. |
+| Check and Install Tools… | | Opens that sheet now. See [Installation](installation.md#3-let-the-app-install-the-tools). |
 | Extra arguments | Empty | Added to every yt-dlp command, after the app's own arguments. For people who know yt-dlp's options. |
 
 If you have your own yt-dlp configuration file, it still applies. If it sets

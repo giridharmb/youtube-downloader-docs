@@ -83,6 +83,12 @@ Some jurisdictions do not allow certain warranties to be excluded or
 liability to be limited, so parts of the two sections above may not apply to
 you.
 
+## Software installed at your request
+
+When you click **Install Missing Tools**, YTDL asks Homebrew to install
+third-party software on your Mac. That software is provided by its own
+authors under its own terms, and the choice to install it is yours.
+
 ## Files on your Mac
 
 YTDL writes files to the folder you choose and can delete files it created.

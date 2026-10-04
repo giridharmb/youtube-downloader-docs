@@ -1,6 +1,6 @@
 # User guide
 
-This guide describes YTDL 1.4.
+This guide describes YTDL 1.5.
 
 - [Downloading](#downloading)
 - [Playlists](#playlists)

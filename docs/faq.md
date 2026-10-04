@@ -23,6 +23,11 @@ live. YTDL cannot decide that for you. Read the [disclaimer](../DISCLAIMER.md).
 
 No. It is an independent project and is not affiliated with any of them.
 
+**Do I have to install yt-dlp and ffmpeg myself?**
+
+No. If they are missing when YTDL opens, it offers to install them. See
+[Installation](installation.md#3-let-the-app-install-the-tools).
+
 **Does it work on Windows or Linux?**
 
 No. It is a macOS app and needs macOS 13 or later.

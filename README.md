@@ -49,8 +49,9 @@ app's source code is kept in a separate, private repository.
   [Deno](https://deno.com)
 - Optional: [aria2](https://aria2.github.io) for multi-connection downloads
 
-YTDL does not include any of these tools. The
-[installation guide](docs/installation.md) shows how to install them.
+YTDL does not include any of these tools, but it can install the missing
+ones for you the first time it opens; see the
+[installation guide](docs/installation.md).
 
 ## Documentation
 
